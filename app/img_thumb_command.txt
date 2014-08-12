@@ -1,0 +1,17 @@
+
+for bros:
+thumb:
+convert brother37.jpg -resize '120x150^' -gravity center -crop '120x150+0+0' brother.png
+bw:
+convert brother37.jpg -resize '120x150^' -gravity center -crop '120x150+0+0' -colorspace gray brother.png
+show:
+convert brother37.jpg -resize '190x*^' -gravity center -crop '190x*+0+0' -colorspace gray brother.png
+
+for gallery imgs:
+bw:
+convert picture.jpg -brightness-contrast -20 -resize '120x150^' -gravity center -crop '120x150+0+0' picture.jpg
+thumb:
+convert picture.jpg -resize '110x120^' -gravity center -crop '110x120+0+0' picture.jpg
+original:
+convert picture.jpg -resize '640x120^' -gravity center -crop '640x640+0+0' picture.jpg
+
