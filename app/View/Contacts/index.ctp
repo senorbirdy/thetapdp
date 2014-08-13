@@ -4,7 +4,7 @@
 
 	<p>Simply shoot us an email. We'll respond to them as soon as possible.</p>
     <?php if (isset($errors)) { foreach ($errors as $e) echo $e; } ?>
-    <span class="flash-notice"><?php echo $this->Session->flash(); ?></span>
+    <div class="flash-notice"><?php echo $this->Session->flash(); ?></div>
     <?php echo $this->Form->create('Contact', array('class' => 'contact iform', 'action' => 'mail')); ?>
         <p style="position: relative">
             <?php echo $this->Form->input('email', array('type' => 'text', 'div' => false, 'size' => 30, 'class' => 'itext')); ?>

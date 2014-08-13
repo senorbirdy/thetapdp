@@ -56,13 +56,12 @@ class GalleryController extends AppController {
         );
 
         $this->set($this->data);
-        //$photos = $this->Gallery->Photo->find('all', array('fields' => array('image_file_name'), 'conditions' => array('gallery' => $gallery)));
         $photos = Set::extract('/Photo/.', $photos);
         $this->set('gallery', $gallery);
         $this->set('photos', $photos);
         if ($this->request->is('ajax')) {
             $this->layout = 'ajax';
-            $this->viewPath = 'elements';
+            $this->viewPath = 'Elements';
             $this->render('gallery_page');
         }
     }

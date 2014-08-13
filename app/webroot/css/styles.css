@@ -6,6 +6,13 @@ div.error-message{
 	color: red;
 }
 
+div.fb_iframe_widget {
+    display: inline;
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+
 a{
 	outline: none;
 	border: none;
@@ -344,7 +351,7 @@ a#twitter-link{
 	background:url("../img/twitter-icon01.png") no-repeat scroll 0 0 transparent;
 	padding-left:26px;
 	position:absolute;
-	right:0;
+	right:75px;
 	top:3px;
 	color: #000000;
 }

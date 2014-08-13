@@ -5867,3 +5867,67 @@ Stack Trace:
 #5 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(ContactsController), Object(CakeRequest))
 #6 /Users/carrykuang/Documents/pdp_site/cake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #7 {main}
+2014-08-13 08:56:54 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'thetaorg\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /cake/Home
+Stack Trace:
+#0 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Model/Datasource/DboSource.php(260): Mysql->connect()
+#1 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Model/ConnectionManager.php(105): DboSource->__construct(Array)
+#2 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Model/Model.php(3498): ConnectionManager::getDataSource('default')
+#3 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Model/Model.php(1136): Model->setDataSource('default')
+#4 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Model/Model.php(3525): Model->setSource('photos')
+#5 /Users/carrykuang/Documents/pdp_site/cake/app/Controller/HomeController.php(18): Model->getDataSource()
+#6 [internal function]: HomeController->index()
+#7 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(HomeController), Array)
+#8 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#9 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest))
+#10 /Users/carrykuang/Documents/pdp_site/cake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-08-13 09:26:32 Error: [SocketException] From is not specified.
+Request URL: /cake/contacts/mail
+Stack Trace:
+#0 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Network/Email/CakeEmail.php(1199): CakeEmail->send(NULL)
+#1 /Users/carrykuang/Documents/pdp_site/cake/app/Controller/ContactsController.php(36): CakeEmail::deliver('pdpimmortal@gma...', '[PDP WEBMAIL]: ', NULL, Array)
+#2 [internal function]: ContactsController->mail()
+#3 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(ContactsController), Array)
+#4 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#5 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(ContactsController), Object(CakeRequest))
+#6 /Users/carrykuang/Documents/pdp_site/cake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2014-08-13 10:05:32 Error: [MissingViewException] View file "/Users/carrykuang/Documents/pdp_site/cake/app/View/elements/show.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/carrykuang/Documents/pdp_site/cake/app/View/elements/show.ctp',
+)
+Request URL: /cake/gallery/show/Fall%202003/page:2
+Stack Trace:
+#0 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Controller/Controller.php(954): View->render(NULL, NULL)
+#2 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Routing/Dispatcher.php(198): Controller->render()
+#3 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(GalleryController), Object(CakeRequest))
+#4 /Users/carrykuang/Documents/pdp_site/cake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-08-13 10:08:31 Error: [MissingViewException] View file "/Users/carrykuang/Documents/pdp_site/cake/app/View/elements/show.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/Users/carrykuang/Documents/pdp_site/cake/app/View/elements/show.ctp',
+)
+Request URL: /cake/gallery/show/Fall%202003/page:2
+Stack Trace:
+#0 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Controller/Controller.php(954): View->render(NULL, NULL)
+#2 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Routing/Dispatcher.php(198): Controller->render()
+#3 /Users/carrykuang/Documents/pdp_site/cake/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(GalleryController), Object(CakeRequest))
+#4 /Users/carrykuang/Documents/pdp_site/cake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-08-13 13:14:01 Error: [MissingControllerException] Controller class CakeController could not be found.
+Exception Attributes: array (
+  'class' => 'CakeController',
+  'plugin' => NULL,
+)
+Request URL: /cake/cake/favicon.ico
+Stack Trace:
+#0 /Users/carrykuang/Documents/pdp_site/cake/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

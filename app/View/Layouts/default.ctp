@@ -30,17 +30,21 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         ), array('media' => "screen, progection")
     );
     echo $this->Html->css('blueprint/print', array('media' => 'print'));
-    echo $this->Html->css('http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/flick/jquery-ui.css', array('media' => 'screen'));
+    echo $this->Html->css('http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/flick/jquery-ui.css', array('media' => 'screen'));
     echo $this->Html->script(
         array(
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js',
             'application',
             'jquery.carouFredSel-2.2.2',
             'jquery.marquee',
-            'jquery.jtwitter'
+            'twitterFetcher'
         ));
-
+    echo $this->Html->meta(
+        'favicon.ico',
+        '/favicon.ico',
+        array('type' => 'icon')
+    );
     ?>
 	<title>
 		<?php echo $title_for_layout; ?>
@@ -57,7 +61,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             <div id="nav">
                 <ul>
                     <li class=<?php echo $home_link ?>>
-                    <?php echo $this->Html->link('HOME', array('controller' => 'home', 'action' => 'index'));?></li>
+                    <?php echo $this->Html->link('HOME', '/');?></li>
                     <li class=<?php echo $about_link ?>>
                     <?php echo $this->Html->link('ABOUT', array('controller' => 'about', 'action' => 'index'));?></li>
                     <li class=<?php echo $rush_link ?>>
@@ -78,26 +82,36 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         </div>
 	    <div id="logo-header">
             <div id="logo-content">
-            <?php echo $this->Html->link('RPI Pi Delta Psi', array('controller' => 'home', 'action' => 'index'), array('id' => 'logo')); ?>
+            <?php echo $this->Html->link('RPI Pi Delta Psi', '/', array('id' => 'logo')); ?>
 		    </div>
-	    </div>
-        <!--<div id="twitter-home-container">
+        </div>
+        <?php if ($home_link == 'active'): ?>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <div id="twitter-home-container">
             <div id="twitter-home">
                 <marquee behavior="scroll" direction="left" scrollamount="2" width="750" height="24"><ul style="margin:0;padding:0" id="posts">Getting your tweets...</ul></marquee>
                 <span class="fade-left"></span>
                 <span class="fade-right"></span>
                 <a href="http://twitter.com/rpi_pdpsi" id="twitter-link" target="_blank">follow us on Twitter</a>
+                <div class="fb-follow" data-href="https://www.facebook.com/rpipdpsi" data-height="25" data-colorscheme="light" data-layout="button" data-show-faces="true"></div>
             </div>
-        </div>-->
+        </div>
+        <?php endif; ?>
         <div class="container-container">
             <div class="container showgrid1">
                 <div class="span-24">
-                    <?php echo $this->Session->flash(); ?>
-
                     <?php echo $this->fetch('content'); ?>
                 </div>
             </div>
         </div>
+        <?php if ($home_link == 'active'): ?>
         <script type="text/javascript">
             $('marquee').marquee('pointer').mouseover(function () {
               $(this).trigger('stop');
@@ -113,55 +127,26 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
               $(this).data('drag', false);
             });
             
-            /*$(document).ready(function(){
-                // Get latest 6 tweets by jQueryHowto
-                $.jTwitter('rpi_pdpsi', 1, function(data){
-                    $('#posts').empty();
-                    $.each(data, function(i, post){
-                        $('#posts').append(
-                            '<li class="post" style="display:inline"><span class="twitter-date">'
-                            // See output-demo.js file for details
-                            +    prettifyDate(post.created_at)
-                            + '</span> '
-                            +    post.text
-                            +'</li>'
-                        );
-                    });
-                });
-            });*/
+            $(document).ready(function(){
+                var config1 = {
+                    "id": '499490292790095872',
+                    "domId": '',
+                    "showUser": false,
+                    "maxTweets": 1,
+                    "enableLinks": false,
+                    "showRetweet": false,
+                    "showInteraction": false,
+                    'customCallback':tweet
 
-            function prettifyDate(time){
-                var values = time.split(" ");
-                time = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
-
-                var parsed_date = Date.parse(time);
-
-                var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
-
-                var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
-                delta = delta + (relative_to.getTimezoneOffset() * 60);
-
-                var out = '';
-
-                if (delta < 60) {
-                    out = 'a minute ago';
-                } else if (delta < 120) {
-                    out = 'couple of minutes ago';
-                } else if (delta < (45 * 60)) {
-                    out = (parseInt(delta / 60)).toString() + ' minutes ago';
-                } else if (delta < (90 * 60)) {
-                    out = 'an hour ago';
-                } else if (delta < (24 * 60 * 60)) {
-                    out = '' + (parseInt(delta / 3600)).toString() + ' hours ago';
-                } else if (delta < (48 * 60 * 60)) {
-                    out = '1 day ago';
-                } else {
-                    out = (parseInt(delta / 86400)).toString() + ' days ago';
-                }
-
-                return out;
+                };
+                twitterFetcher.fetch(config1);
+            });
+            
+            function tweet(tweets){
+                $('#posts').html(tweets[0]);
             }
         </script>
+        <?php endif; ?>
         <div id="footer-content">
             <span id="copyright"> Copyright &copy; 2014 | Pi Delta Psi Fraternity, Inc.</span>
 		</div>
