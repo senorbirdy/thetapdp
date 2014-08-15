@@ -73,7 +73,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     <li class=<?php echo $calendar_link ?>>
                     <?php echo $this->Html->link('CALENDAR', array('controller' => 'calendar', 'action' => 'index'));?></li>
                     <li class=<?php echo $contact_link ?>>
-                    <?php echo $this->Html->link('CONTACT', array('controller' => 'contacts', 'action' => 'index'));?></li>
+                    <?php echo $this->Html->link('CONTACT', array('controller' => 'contact', 'action' => 'index'));?></li>
                 </ul>
                 <!--<div id="login-nav">
                   <%= render :partial=>'users/user_bar' %>

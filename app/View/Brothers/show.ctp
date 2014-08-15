@@ -12,7 +12,17 @@
 				<dt>Basic Info</dt>
                 <dd><span class="info_title">Name:</span><?php echo $current['name']; ?></dd>
 				<dd><span class="info_title">Hometown:</span><?php echo $current['hometown']; ?></dd>
-				<dd><span class="info_title">Ethnicity:</span><?php echo $current['ethnicity']; ?></dd>
+                <dd><span class="info_title">Ethnicity:</span><?php echo $current['ethnicity']; ?></dd>
+                <?php 
+                if ($current['major'] != '') {
+                    $majors = explode('/', $current['major']);
+                    echo '<dd><span class="info_title">Major(s):</span>'.$majors[0].'</dd>';
+                    if (count($majors) > 1) {
+                        for ($i = 1; $i < count($majors); $i++)
+                            echo '<dd><span class="info_title">&nbsp;</span>'.$majors[$i].'</dd>';
+                    }
+                }
+                ?>
 			</dl>
 			<dl class="bros_info">
 				<dt>Brothers Info</dt>

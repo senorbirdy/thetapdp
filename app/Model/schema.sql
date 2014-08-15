@@ -14,6 +14,7 @@ create table brothers (
     photo_file_size int,    
     photo_updated_at int,
     bio text,
+    major varchar(255),
     PRIMARY KEY (id)
 );  
 

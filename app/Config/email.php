@@ -41,7 +41,7 @@ class EmailConfig {
 
 	public $default = array(
 		'transport' => 'Mail',
-		'from' => 'you@localhost',
+		'from' => 'rpipdpsi@rpi-pdpsi.org',
 		//'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',
 	);
