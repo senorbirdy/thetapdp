@@ -5,7 +5,7 @@ convert brother37.jpg -resize '120x150^' -gravity center -crop '120x150+0+0' bro
 bw:
 convert brother37.jpg -resize '120x150^' -gravity center -crop '120x150+0+0' -colorspace gray brother.png
 show:
-convert brother37.jpg -resize '190x*^' -gravity center -crop '190x*+0+0' -colorspace gray brother.png
+convert brother37.jpg -resize '190x' -gravity center -crop '190x+0+0' brother.png
 
 for gallery imgs:
 bw:
