@@ -45,7 +45,7 @@ $(document).ready(function(){
 	$('.brothers').each(function(){
 		var broid = $(this).attr("id");
 		//console.log(broid);
-		$("#"+broid).find('img').delay(2000).fadeIn('slow');
+		$("#"+broid).find('img').delay(500).fadeIn();
 	});
 });
 

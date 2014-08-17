@@ -18,8 +18,8 @@
 
 <script>
     jQuery(document).ready(function() {
-        jQuery("#loader").show().delay(1000).fadeOut(500);
-        jQuery("#images").delay(1500).fadeIn();
+        jQuery("#loader").show().delay(500).fadeOut();
+        jQuery("#images").delay(900).fadeIn();
     });
 </script>
 <style>
