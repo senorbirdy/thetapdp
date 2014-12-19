@@ -16,7 +16,8 @@ INSERT INTO `galleries` (`title`) VALUES
 ('Fall 2012'),
 ('Spring 2013'),
 ('Fall 2013'),
-('Spring 2014');
+('Spring 2014'),
+('Fall 2014');
 
 INSERT INTO `photos` (`gallery`, `image_file_name`) VALUES
 ('Fall 2001', '001_buff.jpg'),
@@ -1003,4 +1004,5 @@ INSERT INTO `photos` (`gallery`, `image_file_name`) VALUES
 ('Spring 2014', 'IMG_2357.JPG'),
 ('Spring 2014', 'IMG_2413.JPG'),
 ('Spring 2014', 'IMG_2415.JPG'),
-('Spring 2014', 'IMG_2440.JPG');
+('Spring 2014', 'IMG_2440.JPG'),
+('Fall 2014', 'ActiveHouse_fall_2014.jpg');

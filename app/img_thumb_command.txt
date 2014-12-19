@@ -9,7 +9,7 @@ convert brother37.jpg -resize '190x' -gravity center -crop '190x+0+0' brother.pn
 
 for gallery imgs:
 bw:
-convert picture.jpg -brightness-contrast -20 -resize '120x150^' -gravity center -crop '120x150+0+0' picture.jpg
+convert picture.jpg -brightness-contrast -20 -resize '110x120^' -gravity center -crop '110x120+0+0' picture.jpg
 thumb:
 convert picture.jpg -resize '110x120^' -gravity center -crop '110x120+0+0' picture.jpg
 original:
