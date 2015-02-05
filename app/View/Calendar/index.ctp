@@ -19,8 +19,9 @@ echo $this->Html->script(array('fullcalendar/lib/moment.min', 'fullcalendar/full
 <script>
     $(document).ready(function() {
         $('#calendar').fullCalendar({
+            googleCalendarApiKey: 'AIzaSyCHuETZw9XFCcN_Ttght4rARwHzwM18o1s',
             events: {
-                url: 'https://www.google.com/calendar/feeds/pdptheta%40gmail.com/public/basic',
+                googleCalendarId: 'pdptheta@gmail.com',
                 color: '#777',
                 className: 'get'
             },
@@ -36,10 +37,10 @@ echo $this->Html->script(array('fullcalendar/lib/moment.min', 'fullcalendar/full
                         '</span>' +
                         '<br/>' +
                         '<span id="calendar-location">' + 
-                            calEvent.location +
+                            (calEvent.location ? calEvent.location : '') +
                         '</span>' +
                         '<div id="calendar-description">' + 
-                            calEvent.description + 
+                            (calEvent.description ? calEvent.description : '') + 
                         '</div>'
                     );
                 return false;
