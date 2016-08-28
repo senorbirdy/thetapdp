@@ -44,8 +44,9 @@ INSERT INTO `brothers`(`name`, `pledge_name`, `pledge_class`, `crossing`, `alumn
 ('Jonathan Chu', 'Headshot', 'Sigma', 'Fall 2012', true, 'Cantonese', 'Los Angeles, CA', 'Business'),
 ('Brandon Sung', 'Crossfire', 'Sigma', 'Fall 2012', true, 'Korean', 'Old Tappan, NJ', 'Undeclared'),
 ('Edwin Chen', 'Mr. Mime', 'Phi', 'Fall 2014', false, 'Chinese', 'Brooklyn, NY', 'Computer & Systems Engineering/Electrical Engineering'),
-('George Qu', 'Tortuga', 'Phi', 'Fall 2014', false, 'Chinese', 'Stamford, CT', 'Biomedical Engineering'),
+('George Qu', 'Tortuga', 'Phi', 'Fall 2014', true, 'Chinese', 'Stamford, CT', 'Biomedical Engineering'),
 ('William Chang', 'Metapod', 'Phi', 'Fall 2014', false, 'Taiwanese', 'Poughkeepsie, NY', 'Mechanical Engineering'),
 ('Brian Shiao', 'Lucian', 'Phi', 'Fall 2014', false, 'Chinese', 'Lexington, MA', 'Biomedical Engineering'),
-('Nicholas Choi', 'BAMBOO', 'Phi', 'Fall 2014', false, 'Chinese/French Canadian', 'Boston, MA', 'Electrical Engineering')
-
+('Nicholas Choi', 'BAMBOO', 'Phi', 'Fall 2014', false, 'Chinese/French Canadian', 'Boston, MA', 'Electrical Engineering'),
+('Danny Li', 'Mizu', 'Psi', 'Spring 2016', false, 'Chinese', 'Fort Lee, NJ', 'Computer Science'),
+('Johnson Liu', 'Yeti', 'Psi', 'Spring 2016', false, 'Chinese', 'Brooklyn, NY', 'Mechanical Engineering')
