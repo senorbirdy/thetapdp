@@ -1,0 +1,8 @@
+#1 update app/Model/brother_seed.sql
+#2 add new # dir to app/webroot/bros/
+#3 add dirs for different photo types
+#4 drop original into original/
+#5 use commands in app/img_thumb_command.txt to convert copies to other types
+#6 update mysql db with need brother_seed.sql row
+#7 ftp new bros/ dir to server
+#8 git push changes to upstream
